@@ -1,11 +1,17 @@
 
 import Image from "next/image"
 
+interface HeroProps {
+  title: string,
+  description: string,
+  image: string | StaticImageData
+}
+
 export default function Hero({
   title,
   description,
   image
-}) {
+}: HeroProps) {
 
 
   return (

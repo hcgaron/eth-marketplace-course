@@ -6,8 +6,9 @@ import {
 } from "@components/course";
 import { BaseLayout } from "@components/layout";
 import { getAllCourses } from "@content/courses/fetcher";
+import { Course } from "..";
 
-export default function Course({course}) {
+export default function Course({ course }: { course: Course }) {
 
   return (
     <>
@@ -43,7 +44,7 @@ export function getStaticPaths() {
 }
 
 
-export function getStaticProps({params}) {
+export function getStaticProps({ params }: { params: any }) {
   const { data } = getAllCourses()
   const course = data.filter(c => c.slug === params.slug)[0]
 
